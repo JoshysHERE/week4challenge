@@ -1,3 +1,33 @@
+var startGame = document.getElementById("start-button")
+var questionContainer = document.getElementById("question-container")
+
+startButton.addeventListener("click", startGame)
+
+
+
+
+function startGame() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // AS A coding boot camp student
 //I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 //SO THAT I can gauge my progress compared to my peers

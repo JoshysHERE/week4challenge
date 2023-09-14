@@ -1,8 +1,9 @@
 body {
-   font-family: fantasy;
-   font-size: 100px;
-   background-color: black;
-   color: white;
+    justify-content: center;
+    font-family: fantasy;
+    font-size: 100px;
+    background-color: black;
+    color: white;
 }
 /*style for the header and title*/
 header {
@@ -14,15 +15,28 @@ header {
 }
 /*style for the buttons and quiz content*/
 .container {
-    height: 500px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
     background-color: darkgreen;
     border: 5px solid white;
 }
 
 .button-controls {
-   background-color: white;
-
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 
 }
 /*style for the foot and footer button*/
