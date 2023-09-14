@@ -2,7 +2,7 @@
 var startGame = document.getElementById("start-button")
 var questionContainer = document.getElementById("question-container")
 
-startButton.addeventListener("click", startGame)
+startButton.addEventListener("click", startGame)
 
 
 
@@ -10,6 +10,7 @@ startButton.addeventListener("click", startGame)
 function startGame() {
 
 }
+
 //Set function for next question
 
 //set function for select answer
