@@ -1,3 +1,4 @@
+// Puts a handle on start game and question container
 var startGame = document.getElementById("start-button")
 var questionContainer = document.getElementById("question-container")
 
@@ -5,7 +6,7 @@ startButton.addeventListener("click", startGame)
 
 
 
-
+// Begins the game with the push of a button
 function startGame() {
 
 }
