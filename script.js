@@ -10,7 +10,11 @@ startButton.addeventListener("click", startGame)
 function startGame() {
 
 }
+//Set function for next question
 
+//set function for select answer
+
+//set up a timer?
 
 
 
