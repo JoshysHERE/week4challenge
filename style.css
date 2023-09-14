@@ -1,0 +1,15 @@
+body {
+font-family: fantasy;
+font-size: 100px;
+background-color: black;
+color: white;
+}
+
+.container {
+    padding: 250px;
+    height: 350px;
+    width: 500px;
+    text-align: center;
+    background-color: darkgreen;
+    border: 5px solid white;
+}
