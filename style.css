@@ -1,8 +1,8 @@
 body {
-font-family: fantasy;
-font-size: 100px;
-background-color: black;
-color: white;
+   font-family: fantasy;
+   font-size: 100px;
+   background-color: black;
+   color: white;
 }
 
 .container {
@@ -12,4 +12,10 @@ color: white;
     text-align: center;
     background-color: darkgreen;
     border: 5px solid white;
+}
+
+.button-controls {
+   background-color: white;
+   
+
 }
