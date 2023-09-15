@@ -11,11 +11,19 @@ function startGame() {
 
 }
 
-//Set function for next question
-
-//set function for select answer
-
 //set up a timer?
+function startTimer() {
+
+
+}
+//Set function for next question
+function nextQuestion() {
+
+}
+//set function for select answer
+function selectAnswer() {
+    
+}
 
 
 
