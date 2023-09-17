@@ -1,19 +1,44 @@
 var startButton = document.getElementById('start-button')
 var questionContainer = document.getElementById ('question-container')
+var questionEl = document.getElementById('question')
+var answerButtons = document.getElementById('answer-buttons')
+
+let randomQuestions, questionIndex
+
+
 startButton.addEventListener('click', startGame)
 
 // this function will start the game
 function startGame() {
-    console.log('started')
+    console.log('started game')
     startButton.classList.add('hide')
+    randomQuestions = questions.sort(() => Math.random() - .5)
+    questionIndex = 0
     questionContainer.classList.remove('hide')
     setNextQuestion()
 
 }
 // this will send the next question
 function setNextQuestion() {
-
+showQuestion(randomQuestions[questionIndex])
 }    
+
+function showQuestion(question) {
+questionEl.innerText = question.question
+question.answers.forEach(answer => {
+var button = document.createElement('button')
+button.innerText = answer.text
+button.classList.add('button')
+if (answer.correct) {
+    button.dataset.correct = answer.correct
+}
+button.addEventListener('click', selectAnswer)
+answerButtons.appendChild(button)
+ })
+
+}
+
+
 
 function selectAnswer() {
 
@@ -21,13 +46,20 @@ function selectAnswer() {
 //questions for the quiz
 var questions = [
     {
-        question: 'what is this?',
+        question: 'How do i open the dev tools on mac?',
         answers: [
-            { text: 'you know what it is', correct: true },
-            { text: 'da other thang', correct: false}
+            { text: 'CMD, Option & J', correct: true },
+            { text: 'CMD, Option & I', correct: false },
+            { text: 'CMD, Option & Y', correct: false },
+            { text: 'CMD, Option & P', correct: false },
+ 
         ]
     }
 ]
+
+
+
+
 
 
 

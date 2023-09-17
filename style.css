@@ -36,14 +36,14 @@ header {
     margin: 20px 0;
 }
 
-.start-button,.next-button {
+.start-button {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px, 20px;
 }   
 
 
-.button-controls {
+.button-controls, .next-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@ header {
 }
 
 
-.hide, .next-button {
+.hide {
     display: none;
 }
 /*style for the foot and footer button*/
