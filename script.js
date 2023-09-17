@@ -1,15 +1,17 @@
 var startButton = document.getElementById('start-button')
+var nextButton = document.getElementById('next-button')
 var questionContainer = document.getElementById ('question-container')
 var questionEl = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 
+
 let randomQuestions, questionIndex
 
-
+//event clicks for star/next buttons
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     questionIndex++
-    NextQuestion()
+    nextQuestion() 
 })
 
 // this function will start the game
@@ -48,7 +50,7 @@ function resetPage() {
     while (answerButtons.firstChild) {
         answerButtons.removeChild
         (answerButtons.firstChild)
-
+        
     }
 }
 
@@ -59,19 +61,25 @@ function selectAnswer(e) {
  Array.from(answerButtons.children).forEach(button => {
     setStatus(button, button.dataset.correct)
  })
- nextButton.classList.remove('hide')
+ if (randomQuestions.length > questionIndex + 1) {
+    nextButton.classList.remove('hide')
+} else { 
+    startButton.innerText = 'Restart'
+    startButton.classList.remove('hide')
+ } 
 }
+ 
 
 function setStatus(element, correct) {
 clearStatus(element)
-if ( correct) {
+if (correct) {
     element.classList.add('correct')
  } else {
     element.classList.add('wrong')
  }
 }
 
-function clearStatus(element, correct) {
+function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
@@ -90,6 +98,44 @@ var questions = [
     }
 ]
 
+var questions = [
+    {
+        question: 'How do i open the dev tools on mac?',
+        answers: [
+            { text: 'CMD, Option & J', correct: true },
+            { text: 'CMD, Option & I', correct: false },
+            { text: 'CMD, Option & Y', correct: false },
+            { text: 'CMD, Option & P', correct: false },
+ 
+        ]
+    }
+]
+
+var questions = [
+    {
+        question: 'Help!',
+        answers: [
+            { text: 'CMD, Option & J', correct: true },
+            { text: 'CMD, Option & I', correct: false },
+            { text: 'CMD, Option & Y', correct: false },
+            { text: 'CMD, Option & P', correct: false },
+ 
+        ]
+    }
+]
+
+var questions = [
+    {
+        question: 'rsthththrhehterththe',
+        answers: [
+            { text: 'hlhgkhjgkgyg', correct: true },
+            { text: 'CMD, Option & I', correct: false },
+            { text: 'CMD, Option & Y', correct: false },
+            { text: 'CMD, Option & P', correct: false },
+ 
+        ]
+    }
+]
 
 
 

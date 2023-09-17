@@ -41,7 +41,7 @@ header {
 }   
 
 
-.button-controls, .next-button {
+.button-controls {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,9 +53,10 @@ header {
 }
 
 
-.hide {
+.hide, .next-button {
     display: none;
 }
+
 /*style for the foot and footer button*/
 footer {
    background-color: black;
