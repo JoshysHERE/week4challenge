@@ -2,36 +2,40 @@ var startButton = document.getElementById("start-button")
 var nextButton = document.getElementById("next-button")
 var questionContainer = document.getElementById("question-container")
 var question = document.getElementById('answer-buttons')
-var answers = document.getElementById('answers')
-let  randomQuestions, questionIndex 
+let randomQuestions, questionIndex 
 // start game and question container
 startButton.addEventListener("click", startGame)
 nextButton.addEventListener('click', () =>{
-currentQuestionIndex++
+questionIndex++
 nextQuestion()
 })
 
 
 // Begins the game with the push of a button
 function startGame() {
-startButton.classList.add
-questions.sort(() => Math.random() - .5)
-questionIndex = 0
-nextQuestion() 
+  console.log('started')
+  startButton.classList.add('hide')
+  randomQuestions = question.Sort(() => Math.random() - .5)
+  questionIndex = 0
+  questionContainer.classList.remove('hide')
+  nextQuestion() 
 
 }
+
 // Actually make a function to show the question
 function showQuestion(question) {
 
 }
 //Set function for next question
 function nextQuestion() {
-showQuestion(randomQuestions[currentQuestionIndex])    
+
 }
 
 //set function for select answer
-function selectAnswer() {
 
+
+
+ 
 //Set up questions for quiz section?
 var questions = [
 {
@@ -44,34 +48,11 @@ var questions = [
 
 ]  
 
-}
+
 
 //set up a timer?
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-        
-    
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-    
-        display.textContent = minutes + ":" + seconds;
-    
-        if(--timer < 0) {
-        timer = duration;
-        }
-      },1000);
-    }
-    
-    window.onload = function () {
-       var fiveMinutes = 60 * 5,
-       display = document.querySelector('time');
-       startTimer(fiveMinutes, display);
-    };
 
-    //add something to enter name for high score
+ //add something to enter name for high score
 
 
 
