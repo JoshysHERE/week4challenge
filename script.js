@@ -1,53 +1,54 @@
 var startButton = document.getElementById("start-button")
 var nextButton = document.getElementById("next-button")
 var questionContainer = document.getElementById("question-container")
-var question = document.getElementById('answer-buttons')
+var question = document.getElementById('question')
+var answerButtons = document.getElementById('answer-buttons')
+
 let randomQuestions, questionIndex 
 // start game and question container
 startButton.addEventListener("click", startGame)
-nextButton.addEventListener('click', () =>{
-questionIndex++
-nextQuestion()
-})
+
+
 
 
 // Begins the game with the push of a button
 function startGame() {
-  console.log('started')
-  startButton.classList.add('hide')
-  randomQuestions = question.Sort(() => Math.random() - .5)
-  questionIndex = 0
-  questionContainer.classList.remove('hide')
-  nextQuestion() 
+console.log('Started')
+startButton.classList.add('hide')
+randomQuestions = question.sort(() => Math.random() - .5)
+questionIndex = 0
+questionContainer.classList.remove('hide')
+nextQuestion()
 
 }
 
 // Actually make a function to show the question
 function showQuestion(question) {
-
+question.innerText = question.question
 }
+
 //Set function for next question
 function nextQuestion() {
+showQuestion(randomQuestions[questionIndex])
 
 }
 
 //set function for select answer
+function selectAnswer() {
 
-
-
- 
-//Set up questions for quiz section?
-var questions = [
-{
-    question: 'say whaaaaaat?',
-    answers: [
-        { text: 'what', correct: true },
-        { text: 'why', correct: false }
-    ]
 }
 
-]  
+//Set up questions for quiz section?
 
+var questions = [
+    {
+      question: 'why do you do dat?'
+      answers: [
+        {text: 'butt', correct: true},
+        {text: 'dat butt', correct: false}
+      ]  
+    }
+]
 
 
 //set up a timer?

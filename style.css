@@ -27,6 +27,18 @@ header {
     border: 5px solid white;
 }
 
+.start-button {
+    font-size: 1.5rem;
+    font-weight: 10000;
+    padding: 100%;
+}   
+
+.next-button {
+    font-size: 1.5rem;
+    font-weight: 10000;
+    padding: 100%; 
+}
+
 .button-controls {
     padding: 0;
     margin: 0;
@@ -38,6 +50,10 @@ header {
     align-items: center;
     background-color: white;
 
+}
+
+.hide  {
+    display: none;
 }
 /*style for the foot and footer button*/
 footer {
