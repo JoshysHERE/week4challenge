@@ -27,14 +27,31 @@ header {
     border: 5px solid white;
 }
 
-.button-grid{
+.button-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
 }
 
+.buttons {
+    color: white;
+    background-color: black;
+
+}
+
+.buttons:hover {
+    border-color: black;
+}
+
 .start-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px, 20px;
+}   
+
+
+.next-button {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px, 20px;
@@ -45,16 +62,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
 
 }
 
-
-.hide, .next-button {
-    display: none;
+.hide .next-button {
+ display: none;   
 }
 
 /*style for the foot and footer button*/
