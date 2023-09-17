@@ -1,4 +1,6 @@
 body {
+    padding: 0;
+    margin: 0;
     justify-content: center;
     font-family: fantasy;
     font-size: 100px;
@@ -27,21 +29,21 @@ header {
     border: 5px solid white;
 }
 
-.start-button {
-    font-size: 1.5rem;
-    font-weight: 10000;
-    padding: 100%;
-}   
-
-.next-button {
-    font-size: 1.5rem;
-    font-weight: 10000;
-    padding: 100%; 
+.button-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
 }
 
+.start-button,.next-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px, 20px;
+}   
+
+
 .button-controls {
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +54,8 @@ header {
 
 }
 
-.hide  {
+
+.hide, .next-button {
     display: none;
 }
 /*style for the foot and footer button*/

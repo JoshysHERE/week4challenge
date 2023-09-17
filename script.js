@@ -1,72 +1,33 @@
-var startButton = document.getElementById("start-button")
-var nextButton = document.getElementById("next-button")
-var questionContainer = document.getElementById("question-container")
-var question = document.getElementById('question')
-var answerButtons = document.getElementById('answer-buttons')
+var startButton = document.getElementById('start-button')
+var questionContainer = document.getElementById ('question-container')
+startButton.addEventListener('click', startGame)
 
-let randomQuestions, questionIndex 
-// start game and question container
-startButton.addEventListener("click", startGame)
-
-
-
-
-// Begins the game with the push of a button
+// this function will start the game
 function startGame() {
-console.log('Started')
-startButton.classList.add('hide')
-randomQuestions = question.sort(() => Math.random() - .5)
-questionIndex = 0
-questionContainer.classList.remove('hide')
-nextQuestion()
+    console.log('started')
+    startButton.classList.add('hide')
+    questionContainer.classList.remove('hide')
+    setNextQuestion()
 
 }
+// this will send the next question
+function setNextQuestion() {
 
-// Actually make a function to show the question
-function showQuestion(question) {
-question.innerText = question.question
-}
+}    
 
-//Set function for next question
-function nextQuestion() {
-showQuestion(randomQuestions[questionIndex])
-
-}
-
-//set function for select answer
 function selectAnswer() {
 
 }
-
-//Set up questions for quiz section?
-
+//questions for the quiz
 var questions = [
     {
-      question: 'why do you do dat?'
-      answers: [
-        {text: 'butt', correct: true},
-        {text: 'dat butt', correct: false}
-      ]  
+        question: 'what is this?',
+        answers: [
+            { text: 'you know what it is', correct: true },
+            { text: 'da other thang', correct: false}
+        ]
     }
 ]
-
-
-//set up a timer?
-
- //add something to enter name for high score
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
