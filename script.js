@@ -7,6 +7,10 @@ let randomQuestions, questionIndex
 
 
 startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+    questionIndex++
+    NextQuestion()
+})
 
 // this function will start the game
 function startGame() {
@@ -15,11 +19,11 @@ function startGame() {
     randomQuestions = questions.sort(() => Math.random() - .5)
     questionIndex = 0
     questionContainer.classList.remove('hide')
-    setNextQuestion()
+    nextQuestion()
 
 }
 // this will send the next question
-function setNextQuestion() {
+function nextQuestion() {
 showQuestion(randomQuestions[questionIndex])
 }    
 
@@ -39,10 +43,39 @@ answerButtons.appendChild(button)
 }
 
 
+function resetPage() {
+    nextButton.classList.add('hide')
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild
+        (answerButtons.firstChild)
 
-function selectAnswer() {
-
+    }
 }
+
+function selectAnswer(e) {
+    var selectButton = e.target
+    var correct = selectButton.dataset.correct
+ setStatus(document.body, correct)
+ Array.from(answerButtons.children).forEach(button => {
+    setStatus(button, button.dataset.correct)
+ })
+ nextButton.classList.remove('hide')
+}
+
+function setStatus(element, correct) {
+clearStatus(element)
+if ( correct) {
+    element.classList.add('correct')
+ } else {
+    element.classList.add('wrong')
+ }
+}
+
+function clearStatus(element, correct) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
+
 //questions for the quiz
 var questions = [
     {
