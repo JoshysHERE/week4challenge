@@ -86,7 +86,7 @@ function clearStatus(element) {
 }
 
 //questions for the quiz
-const questions = [
+var questions = [
     {
       question: 'What do you use to comment in HTML?',
       answers: [
