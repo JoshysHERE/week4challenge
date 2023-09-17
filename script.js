@@ -1,11 +1,15 @@
-// Puts a handle on start game and question container
 var startButton = document.getElementById("start-button")
+var nextButton = document.getElementById("next-button")
 var questionContainer = document.getElementById("question-container")
-
-var questionIndex 
-
+var question = document.getElementById('answer-buttons')
+var answers = document.getElementById('answers')
+let  randomQuestions, questionIndex 
+// start game and question container
 startButton.addEventListener("click", startGame)
-
+nextButton.addEventListener('click', () =>{
+currentQuestionIndex++
+nextQuestion()
+})
 
 
 // Begins the game with the push of a button
@@ -16,9 +20,13 @@ questionIndex = 0
 nextQuestion() 
 
 }
+// Actually make a function to show the question
+function showQuestion(question) {
+
+}
 //Set function for next question
 function nextQuestion() {
-showQuestion
+showQuestion(randomQuestions[currentQuestionIndex])    
 }
 
 //set function for select answer
@@ -27,10 +35,10 @@ function selectAnswer() {
 //Set up questions for quiz section?
 var questions = [
 {
-    question: 'say whaaaaaat?'
+    question: 'say whaaaaaat?',
     answers: [
         { text: 'what', correct: true },
-        { text: 'why', correct: tfalse }
+        { text: 'why', correct: false }
     ]
 }
 
