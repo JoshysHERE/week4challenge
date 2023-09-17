@@ -1,6 +1,8 @@
 // Puts a handle on start game and question container
-var startGame = document.getElementById("start-button")
+var startButton = document.getElementById("start-button")
 var questionContainer = document.getElementById("question-container")
+
+var questionIndex 
 
 startButton.addEventListener("click", startGame)
 
@@ -8,23 +10,60 @@ startButton.addEventListener("click", startGame)
 
 // Begins the game with the push of a button
 function startGame() {
-
-}
-
-//set up a timer?
-function startTimer() {
-
+startButton.classList.add
+questions.sort(() => Math.random() - .5)
+questionIndex = 0
+nextQuestion() 
 
 }
 //Set function for next question
 function nextQuestion() {
-
+showQuestion
 }
+
 //set function for select answer
 function selectAnswer() {
-    
+
+//Set up questions for quiz section?
+var questions = [
+{
+    question: 'say whaaaaaat?'
+    answers: [
+        { text: 'what', correct: true },
+        { text: 'why', correct: tfalse }
+    ]
 }
 
+]  
+
+}
+
+//set up a timer?
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        
+    
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+    
+        display.textContent = minutes + ":" + seconds;
+    
+        if(--timer < 0) {
+        timer = duration;
+        }
+      },1000);
+    }
+    
+    window.onload = function () {
+       var fiveMinutes = 60 * 5,
+       display = document.querySelector('time');
+       startTimer(fiveMinutes, display);
+    };
+
+    //add something to enter name for high score
 
 
 
