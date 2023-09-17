@@ -1,7 +1,7 @@
 var startButton = document.getElementById('start-button')
 var nextButton = document.getElementById('next-button')
 var questionContainer = document.getElementById ('question-container')
-var questionEl = document.getElementById('question')
+var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 
 
@@ -30,11 +30,11 @@ showQuestion(randomQuestions[questionIndex])
 }    
 
 function showQuestion(question) {
-questionEl.innerText = question.question
+question.innerText = question.question
 question.answers.forEach(answer => {
 var button = document.createElement('button')
 button.innerText = answer.text
-button.classList.add('button')
+button.classList.add('buttons')
 if (answer.correct) {
     button.dataset.correct = answer.correct
 }
@@ -61,7 +61,8 @@ function selectAnswer(e) {
  Array.from(answerButtons.children).forEach(button => {
     setStatus(button, button.dataset.correct)
  })
- if (randomQuestions.length > questionIndex + 1) {
+
+ if (randomQuestions.length > questionIndex + 2) {
     nextButton.classList.remove('hide')
 } else { 
     startButton.innerText = 'Restart'
@@ -85,57 +86,40 @@ function clearStatus(element) {
 }
 
 //questions for the quiz
-var questions = [
+const questions = [
     {
-        question: 'How do i open the dev tools on mac?',
-        answers: [
-            { text: 'CMD, Option & J', correct: true },
-            { text: 'CMD, Option & I', correct: false },
-            { text: 'CMD, Option & Y', correct: false },
-            { text: 'CMD, Option & P', correct: false },
- 
-        ]
-    }
-]
-
-var questions = [
+      question: 'What do you use to comment in HTML?',
+      answers: [
+        { text: '//', correct: true },
+        { text: '/**/', correct: false }
+      ]
+    },
     {
-        question: 'How do i open the dev tools on mac?',
-        answers: [
-            { text: 'CMD, Option & J', correct: true },
-            { text: 'CMD, Option & I', correct: false },
-            { text: 'CMD, Option & Y', correct: false },
-            { text: 'CMD, Option & P', correct: false },
- 
-        ]
-    }
-]
-
-var questions = [
+      question: 'What do you use to style your HTML',
+      answers: [
+        { text: 'CSS', correct: true },
+        { text: 'Javascript', correct: false },
+        { text: 'Java', correct: false },
+        { text: 'Python', correct: false }
+      ]
+    },
     {
-        question: 'Help!',
-        answers: [
-            { text: 'CMD, Option & J', correct: true },
-            { text: 'CMD, Option & I', correct: false },
-            { text: 'CMD, Option & Y', correct: false },
-            { text: 'CMD, Option & P', correct: false },
- 
-        ]
-    }
-]
-
-var questions = [
+      question: 'How do you use the DevTools on MAC?',
+      answers: [
+        { text: 'CMD, Option S', correct: false },
+        { text: 'CMD, Option J', correct: true },
+        { text: 'CMD, Option C', correct: false },
+        { text: 'CMD, Option P', correct: false }
+      ]
+    },
     {
-        question: 'rsthththrhehterththe',
-        answers: [
-            { text: 'hlhgkhjgkgyg', correct: true },
-            { text: 'CMD, Option & I', correct: false },
-            { text: 'CMD, Option & Y', correct: false },
-            { text: 'CMD, Option & P', correct: false },
- 
-        ]
+      question: 'Which extension in VSCode allows you to preview your work??',
+      answers: [
+        { text: 'ProjectLense', correct: false },
+        { text: 'LiveServer', correct: true }
+      ]
     }
-]
+  ]
 
 
 
