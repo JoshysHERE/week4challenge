@@ -4,7 +4,7 @@ var questionContainer = document.getElementById ('question-container')
 var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var highScore = document.getElementById('high-score')
-var count = 15;
+var count = 10;
 
 let randomQuestions, questionIndex
 
@@ -22,7 +22,7 @@ function startGame() {
     questionIndex = 0
     questionContainer.classList.remove('hide')
     nextQuestion()
-var count = 15;
+var count = 10;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;
   count--;
@@ -65,7 +65,6 @@ function resetPage() {
     nextButton.classList.add('hide')
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild)
-    
         
     }
 }
