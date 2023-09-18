@@ -24,11 +24,12 @@ body.correct {
     justify-content: center;
     align-items: center;
     width: 88vw;
-    height: 60vh;
+    height: 80vh;
     text-align: center;
     background-color:black;
     border: 5px solid white;
 }
+
 
 .button-grid {
     display: grid;
@@ -80,6 +81,21 @@ body.correct {
 
 }
 
+
 .hide .next-button {
  display: none;   
+}
+
+
+.high-score {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: right;
+    width: 88vw;
+    height: 300px;
+    text-align: center;
+    background-color:black;
+    border: 5px solid white;
 }

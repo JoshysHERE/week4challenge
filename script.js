@@ -5,6 +5,7 @@ var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var highScore = document.getElementById('high-score')
 var count = 15;
+
 let randomQuestions, questionIndex
 
 //event clicks for star/next buttons
@@ -21,15 +22,16 @@ function startGame() {
     questionIndex = 0
     questionContainer.classList.remove('hide')
     nextQuestion()
-var count = 15;
+var count = 1;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;
   count--;
   if (count === 0){
     clearInterval(interval);
-    document.getElementById('count').innerHTML='End';
+    document.getElementById('count').innerHTML='Game Over!';
     confirm("NO MORE TIME!!");
-    prompt('Enter your name');
+    prompt("Show Off Your Score! Enter Your Name!")
+    
 
   }
 }, 1000);
@@ -43,11 +45,11 @@ showQuestion(randomQuestions[questionIndex])
 }    
 
 function showQuestion(question) {
-question.innerText = question.question
-question.answers.forEach(answer => {
+   question.innerText = question.question
+   question.answers.forEach(answer => {
 var button = document.createElement('button')
-button.innerText = answer.text
-button.classList.add('button')
+   button.innerText = answer.text
+   button.classList.add('button')
 if (answer.correct) {
     button.dataset.correct = answer.correct
 }
@@ -97,7 +99,6 @@ function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong') 
 }
-
 
 //questions for the quiz
 var questions = [
