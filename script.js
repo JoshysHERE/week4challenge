@@ -85,7 +85,6 @@ function selectAnswer(e) {
  
 }
 
-
 function setStatus(element, correct) {
 clearStatus(element)
 if (correct) {
