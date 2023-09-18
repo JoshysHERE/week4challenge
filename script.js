@@ -22,7 +22,7 @@ function startGame() {
     questionIndex = 0
     questionContainer.classList.remove('hide')
     nextQuestion()
-var count = 1;
+var count = 15;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;
   count--;
@@ -30,7 +30,7 @@ var interval = setInterval(function(){
     clearInterval(interval);
     document.getElementById('count').innerHTML='Game Over!';
     confirm("NO MORE TIME!!");
-    prompt("Show Off Your Score! Enter Your Name!")
+    confirm("Show Off Your Score! Enter Your Name Below!")
     
 
   }
@@ -40,6 +40,7 @@ var interval = setInterval(function(){
 
 // this will send the next question
 function nextQuestion() {
+    resetPage()
 showQuestion(randomQuestions[questionIndex])
 
 }    
