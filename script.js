@@ -3,7 +3,8 @@ var nextButton = document.getElementById('next-button')
 var questionContainer = document.getElementById ('question-container')
 var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
-
+var highScore = document.getElementById('high-score')
+var count = 15;
 let randomQuestions, questionIndex
 
 //event clicks for star/next buttons
@@ -20,22 +21,23 @@ function startGame() {
     questionIndex = 0
     questionContainer.classList.remove('hide')
     nextQuestion()
-    var timer;
-    var ele = document.getElementById('timer');
-    (function(){
-        var sec = 15;
-        timer = setInterval(()=>{
-          ele.innerHTML = '00:'+sec;
-          sec --;
-        }, 1000) // each 1 second
-      })() 
-      
-      function pause(){
-        clearInterval(timer);
-      }
 
 
-}
+var count = 15;
+var interval = setInterval(function(){
+  document.getElementById('count').innerHTML=count;
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    document.getElementById('count').innerHTML='End';
+    confirm("NO MORE TIME!!");
+    prompt('Enter your name');
+
+  }
+}, 1000);
+  }
+
+
 // this will send the next question
 function nextQuestion() {
 showQuestion(randomQuestions[questionIndex])
@@ -55,11 +57,14 @@ answerButtons.appendChild(button)
   })
 }
 
+
 function resetPage() {
     clearStatus(document.body)
     nextButton.classList.add('hide')
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild)
+
+        
     }
 }
 
@@ -70,14 +75,15 @@ function selectAnswer(e) {
  Array.from(answerButtons.children).forEach(button => {
     setStatus(button, button.dataset.correct)
  })
- if (randomQuestions.length > questionIndex + 1) {
+ if (randomQuestions.length > questionIndex + 0) {
     nextButton.classList.remove('hide')
 } else { 
     startButton.innerText = 'Restart'
     startButton.classList.remove('hide')
  } 
-}
  
+}
+
 
 function setStatus(element, correct) {
 clearStatus(element)
@@ -90,8 +96,9 @@ if (correct) {
 
 function clearStatus(element) {
     element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('wrong') 
 }
+
 
 //questions for the quiz
 var questions = [
