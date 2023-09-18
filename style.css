@@ -2,18 +2,21 @@ body {
     padding: 10px;
     justify-content: center;
     font-family: fantasy;
-    font-size: 100px;
+    font-size: 50px;
     background-color: black;
     color: white;
 }
-/*style for the header and title*/
-header {
-    text-align: center;
-    font-size: 50px;
-    background-color: black;
-    color: white;   
-    border: 5px solid white;
+
+
+#js_timer {
+  text-align: center;
 }
+#timer{
+  color: #000;
+
+}
+
+
 /*style for the buttons and quiz content*/
 .container {
     padding: 0;
@@ -60,25 +63,14 @@ header {
 
 
 .button-controls {
+    height: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color:black;
 
 }
 
 .hide .next-button {
  display: none;   
-}
-
-/*style for the foot and footer button*/
-footer {
-   background-color: black;
-   color: darkgreen;   
-   border: 5px solid white;
-   text-align: center;
-}
-
-.footer-button {
-   background-color: white;  
 }

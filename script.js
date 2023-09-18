@@ -4,7 +4,6 @@ var questionContainer = document.getElementById ('question-container')
 var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 
-
 let randomQuestions, questionIndex
 
 //event clicks for star/next buttons
@@ -16,12 +15,25 @@ nextButton.addEventListener('click', () => {
 
 // this function will start the game
 function startGame() {
-    console.log('started game')
     startButton.classList.add('hide')
     randomQuestions = questions.sort(() => Math.random() - .5)
     questionIndex = 0
     questionContainer.classList.remove('hide')
     nextQuestion()
+    var timer;
+    var ele = document.getElementById('timer');
+    (function(){
+        var sec = 15;
+        timer = setInterval(()=>{
+          ele.innerHTML = '00:'+sec;
+          sec --;
+        }, 1000) // each 1 second
+      })() 
+      
+      function pause(){
+        clearInterval(timer);
+      }
+
 
 }
 // this will send the next question
@@ -30,7 +42,7 @@ showQuestion(randomQuestions[questionIndex])
 }    
 
 function showQuestion(question) {
-question.innerText = question.question
+question.innerText = question.questions
 question.answers.forEach(answer => {
 var button = document.createElement('button')
 button.innerText = answer.text
@@ -40,17 +52,14 @@ if (answer.correct) {
 }
 button.addEventListener('click', selectAnswer)
 answerButtons.appendChild(button)
- })
-
+  })
 }
 
-
 function resetPage() {
+    clearStatus(document.body)
     nextButton.classList.add('hide')
     while (answerButtons.firstChild) {
-        answerButtons.removeChild
-        (answerButtons.firstChild)
-        
+        answerButtons.removeChild(answerButtons.firstChild)
     }
 }
 
@@ -61,8 +70,7 @@ function selectAnswer(e) {
  Array.from(answerButtons.children).forEach(button => {
     setStatus(button, button.dataset.correct)
  })
-
- if (randomQuestions.length > questionIndex + 2) {
+ if (randomQuestions.length > questionIndex + 1) {
     nextButton.classList.remove('hide')
 } else { 
     startButton.innerText = 'Restart'
@@ -120,6 +128,7 @@ var questions = [
       ]
     }
   ]
+
 
 
 
