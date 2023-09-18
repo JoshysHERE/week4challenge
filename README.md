@@ -7,6 +7,9 @@ n/a
 ## Installation
 No install needed
 ## Usage
+
+This website is meant to be a short quiz about coding
+
 ![week4challengepic](https://github.com/JoshysHERE/week4challenge/assets/141682993/0ae6ac49-24f3-4822-8696-8ec7b7a73eb7)
 ## License
 n/a
