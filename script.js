@@ -21,8 +21,6 @@ function startGame() {
     questionIndex = 0
     questionContainer.classList.remove('hide')
     nextQuestion()
-
-
 var count = 15;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;
@@ -41,14 +39,15 @@ var interval = setInterval(function(){
 // this will send the next question
 function nextQuestion() {
 showQuestion(randomQuestions[questionIndex])
+
 }    
 
 function showQuestion(question) {
-question.innerText = question.questions
+question.innerText = question.question
 question.answers.forEach(answer => {
 var button = document.createElement('button')
 button.innerText = answer.text
-button.classList.add('buttons')
+button.classList.add('button')
 if (answer.correct) {
     button.dataset.correct = answer.correct
 }
@@ -63,7 +62,7 @@ function resetPage() {
     nextButton.classList.add('hide')
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild)
-
+    
         
     }
 }
@@ -75,7 +74,7 @@ function selectAnswer(e) {
  Array.from(answerButtons.children).forEach(button => {
     setStatus(button, button.dataset.correct)
  })
- if (randomQuestions.length > questionIndex + 0) {
+ if (randomQuestions.length > questionIndex + 1) {
     nextButton.classList.remove('hide')
 } else { 
     startButton.innerText = 'Restart'
