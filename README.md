@@ -18,6 +18,6 @@ n/a
 ## Tests
 
 ### My Portfolio Link:  https://joshyshere.github.io/joshsportfolio/
-### GitHub Pages Link: 
 
-### Github Repo Link:  
+### GitHub Pages Link:   https://joshyshere.github.io/week4challenge/
+### Github Repo Link:  https://github.com/JoshysHERE/week4challenge/settings/pages/
